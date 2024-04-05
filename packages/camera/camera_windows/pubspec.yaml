@@ -2,6 +2,8 @@ name: camera_windows
 description: A Flutter plugin for getting information about and controlling the camera on Windows.
 repository: https://github.com/flutter/packages/tree/main/packages/camera/camera_windows
 issue_tracker: https://github.com/flutter/flutter/issues?q=is%3Aissue+is%3Aopen+label%3A%22p%3A+camera%22
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
+
 version: 0.2.1+9
 
 environment:
@@ -17,7 +19,11 @@ flutter:
         dartPluginClass: CameraWindows
 
 dependencies:
-  camera_platform_interface: ^2.3.1
+  camera_platform_interface: 
+    git:
+      url: https://github.com/filipsky/packages
+      ref: git_build
+      path: packages/camera/camera_platform_interface
   cross_file: ^0.3.1
   flutter:
     sdk: flutter
