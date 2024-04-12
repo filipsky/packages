@@ -310,7 +310,7 @@ public class ResolutionFeature extends CameraFeature<ResolutionPreset> {
         maxHeight = 2160;
         break;
       case veryHigh:
-        maxHeight = 1060;
+        maxHeight = 1080;
         break;
       case high:
         maxHeight = 720;
