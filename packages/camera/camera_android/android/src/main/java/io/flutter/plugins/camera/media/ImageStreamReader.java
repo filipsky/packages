@@ -6,6 +6,7 @@ package io.flutter.plugins.camera.media;
 
 import android.graphics.ImageFormat;
 import android.graphics.Rect;
+import android.graphics.YuvImage;
 import android.media.Image;
 import android.media.ImageReader;
 import android.os.Handler;
