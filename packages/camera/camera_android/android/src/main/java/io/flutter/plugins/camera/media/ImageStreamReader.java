@@ -204,7 +204,7 @@ public class ImageStreamReader {
         imageStreamReaderUtils.yuv420ThreePlanesToNV21(
             image.getPlanes(), image.getWidth(), image.getHeight());
 
-    YuvImage yuv = new YuvImage(yuvBytes, ImageFormat.NV21, image.getWidth(),
+    YuvImage yuv = new YuvImage(yuvBytes.array(), ImageFormat.NV21, image.getWidth(),
             image.getHeight(), null);
 
     ByteArrayOutputStream out = new ByteArrayOutputStream();
