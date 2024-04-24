@@ -74,7 +74,7 @@ public class ImageStreamReader {
    */
   @VisibleForTesting
   public static int computeStreamImageFormat(int dartImageFormat) {
-    if (dartImageFormat == ImageFormat.NV21) {
+    if (dartImageFormat == ImageFormat.NV21 || dartImageFormat == ImageFormat.JPEG) {
       return ImageFormat.YUV_420_888;
     } else {
       return dartImageFormat;
@@ -101,8 +101,10 @@ public class ImageStreamReader {
       // Get plane data ready
       if (dartImageFormat == ImageFormat.NV21) {
         imageBuffer.put("planes", parsePlanesForNv21(image));
+      } else if (dartImageFormat == ImageFormat.JPEG) {
+        imageBuffer.put("planes", parsePlanesForJpeg(image));
       } else {
-        imageBuffer.put("planes", parsePlanesForYuvOrJpeg(image));
+        imageBuffer.put("planes", parsePlanesForYuv(image));
       }
 
       imageBuffer.put("width", image.getWidth());
@@ -141,7 +143,7 @@ public class ImageStreamReader {
    * @return parsed map describing the image planes to be sent to dart.
    */
   @NonNull
-  public List<Map<String, Object>> parsePlanesForYuvOrJpeg(@NonNull Image image) {
+  public List<Map<String, Object>> parsePlanesForYuv(@NonNull Image image) {
     List<Map<String, Object>> planes = new ArrayList<>();
 
     // For YUV420 and JPEG, just send the data as-is for each plane.
@@ -180,6 +182,35 @@ public class ImageStreamReader {
     planeBuffer.put("bytesPerRow", image.getWidth());
     planeBuffer.put("bytesPerPixel", 1);
     planeBuffer.put("bytes", bytes.array());
+    planes.add(planeBuffer);
+    return planes;
+  }
+
+   /**
+   * Given an input image, will return a single-plane JPEG image. Assumes YUV420 as an input type.
+   *
+   * @param image - the image to process.
+   * @return parsed map describing the image planes to be sent to dart.
+   */
+  @NonNull
+  public List<Map<String, Object>> parsePlanesForJpeg(@NonNull Image image) {
+    List<Map<String, Object>> planes = new ArrayList<>();
+
+    // We will convert the YUV data to NV21 which is a single-plane image
+    ByteBuffer yuvBytes =
+        imageStreamReaderUtils.yuv420ThreePlanesToNV21(
+            image.getPlanes(), image.getWidth(), image.getHeight());
+
+    YuvImage yuv = new YuvImage(yuvBytes, ImageFormat.NV21, image.getWidth(),
+            image.getHeight(), null);
+
+    ByteArrayOutputStream out = new ByteArrayOutputStream();
+    yuv.compressToJpeg(new Rect(0, 0, image.getWidth(), image.getHeight()), 75, out);
+
+    Map<String, Object> planeBuffer = new HashMap<>();
+    planeBuffer.put("bytesPerRow", image.getWidth());
+    planeBuffer.put("bytesPerPixel", 1);
+    planeBuffer.put("bytes", out.toByteArray());
     planes.add(planeBuffer);
     return planes;
   }
