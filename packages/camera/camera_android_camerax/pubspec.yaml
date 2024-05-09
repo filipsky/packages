@@ -4,7 +4,7 @@ repository: https://github.com/flutter/packages/tree/main/packages/camera/camera
 issue_tracker: https://github.com/flutter/flutter/issues?q=is%3Aissue+is%3Aopen+label%3A%22p%3A+camera%22
 publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
-version: 0.6.3
+version: 0.6.4+1
 
 environment:
   sdk: ^3.1.0

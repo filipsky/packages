@@ -1,3 +1,15 @@
+## 0.3.5
+
+* Replaces `getCountryCode` with `countryCode`.
+
+## 0.3.4+1
+
+* Adds documentation for UserChoice and Alternative Billing.
+
+## 0.3.4
+
+* Adds `countryCode` API.
+
 ## 0.3.3+1
 
 * Moves alternative billing listener creation to BillingClientFactoryImpl.
