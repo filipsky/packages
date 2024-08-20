@@ -612,7 +612,9 @@ class Camera
 
     // Add pictureImageReader surface to allow for still capture
     // during recording/image streaming.
-    surfaces.add(pictureImageReader.getSurface());
+    if (pictureImageReader != null && pictureImageReader.getSurface() != null) {
+      surfaces.add(pictureImageReader.getSurface());
+    }
 
     createCaptureSession(
         CameraDevice.TEMPLATE_RECORD, successCallback, surfaces.toArray(new Surface[0]));
