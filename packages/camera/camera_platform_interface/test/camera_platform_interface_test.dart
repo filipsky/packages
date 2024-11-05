@@ -32,9 +32,7 @@ void main() {
       CameraPlatform.instance = ExtendsCameraPlatform();
     });
 
-    test(
-        'Default implementation of availableCameras() should throw unimplemented error',
-        () {
+    test('Default implementation of availableCameras() should throw unimplemented error', () {
       // Arrange
       final ExtendsCameraPlatform cameraPlatform = ExtendsCameraPlatform();
 
@@ -45,9 +43,7 @@ void main() {
       );
     });
 
-    test(
-        'Default implementation of onCameraInitialized() should throw unimplemented error',
-        () {
+    test('Default implementation of onCameraInitialized() should throw unimplemented error', () {
       // Arrange
       final ExtendsCameraPlatform cameraPlatform = ExtendsCameraPlatform();
 
@@ -58,9 +54,7 @@ void main() {
       );
     });
 
-    test(
-        'Default implementation of onResolutionChanged() should throw unimplemented error',
-        () {
+    test('Default implementation of onResolutionChanged() should throw unimplemented error', () {
       // Arrange
       final ExtendsCameraPlatform cameraPlatform = ExtendsCameraPlatform();
 
@@ -71,9 +65,7 @@ void main() {
       );
     });
 
-    test(
-        'Default implementation of onCameraClosing() should throw unimplemented error',
-        () {
+    test('Default implementation of onCameraClosing() should throw unimplemented error', () {
       // Arrange
       final ExtendsCameraPlatform cameraPlatform = ExtendsCameraPlatform();
 
@@ -84,9 +76,7 @@ void main() {
       );
     });
 
-    test(
-        'Default implementation of onCameraError() should throw unimplemented error',
-        () {
+    test('Default implementation of onCameraError() should throw unimplemented error', () {
       // Arrange
       final ExtendsCameraPlatform cameraPlatform = ExtendsCameraPlatform();
 
@@ -97,9 +87,7 @@ void main() {
       );
     });
 
-    test(
-        'Default implementation of onDeviceOrientationChanged() should throw unimplemented error',
-        () {
+    test('Default implementation of onDeviceOrientationChanged() should throw unimplemented error', () {
       // Arrange
       final ExtendsCameraPlatform cameraPlatform = ExtendsCameraPlatform();
 
@@ -110,23 +98,18 @@ void main() {
       );
     });
 
-    test(
-        'Default implementation of lockCaptureOrientation() should throw unimplemented error',
-        () {
+    test('Default implementation of lockCaptureOrientation() should throw unimplemented error', () {
       // Arrange
       final ExtendsCameraPlatform cameraPlatform = ExtendsCameraPlatform();
 
       // Act & Assert
       expect(
-        () => cameraPlatform.lockCaptureOrientation(
-            1, DeviceOrientation.portraitUp),
+        () => cameraPlatform.lockCaptureOrientation(1, DeviceOrientation.portraitUp),
         throwsUnimplementedError,
       );
     });
 
-    test(
-        'Default implementation of unlockCaptureOrientation() should throw unimplemented error',
-        () {
+    test('Default implementation of unlockCaptureOrientation() should throw unimplemented error', () {
       // Arrange
       final ExtendsCameraPlatform cameraPlatform = ExtendsCameraPlatform();
 
@@ -137,8 +120,7 @@ void main() {
       );
     });
 
-    test('Default implementation of dispose() should throw unimplemented error',
-        () {
+    test('Default implementation of dispose() should throw unimplemented error', () {
       // Arrange
       final ExtendsCameraPlatform cameraPlatform = ExtendsCameraPlatform();
 
@@ -149,9 +131,7 @@ void main() {
       );
     });
 
-    test(
-        'Default implementation of createCamera() should throw unimplemented error',
-        () {
+    test('Default implementation of createCamera() should throw unimplemented error', () {
       // Arrange
       final ExtendsCameraPlatform cameraPlatform = ExtendsCameraPlatform();
 
@@ -169,9 +149,7 @@ void main() {
       );
     });
 
-    test(
-        'Default implementation of createCameraWithSettings() should call createCamera() passing parameters',
-        () {
+    test('Default implementation of createCameraWithSettings() should call createCamera() passing parameters', () {
       // Arrange
       const CameraDescription cameraDescription = CameraDescription(
         name: 'back',
@@ -219,14 +197,10 @@ void main() {
         mediaSettings,
       );
 
-      expect(createCameraCalled, isTrue,
-          reason:
-              'default implementation of createCameraWithSettings should call createCamera passing parameters');
+      expect(createCameraCalled, isTrue, reason: 'default implementation of createCameraWithSettings should call createCamera passing parameters');
     });
 
-    test(
-        'Default implementation of initializeCamera() should throw unimplemented error',
-        () {
+    test('Default implementation of initializeCamera() should throw unimplemented error', () {
       // Arrange
       final ExtendsCameraPlatform cameraPlatform = ExtendsCameraPlatform();
 
@@ -237,9 +211,7 @@ void main() {
       );
     });
 
-    test(
-        'Default implementation of pauseVideoRecording() should throw unimplemented error',
-        () {
+    test('Default implementation of pauseVideoRecording() should throw unimplemented error', () {
       // Arrange
       final ExtendsCameraPlatform cameraPlatform = ExtendsCameraPlatform();
 
@@ -250,9 +222,7 @@ void main() {
       );
     });
 
-    test(
-        'Default implementation of prepareForVideoRecording() should throw unimplemented error',
-        () {
+    test('Default implementation of prepareForVideoRecording() should throw unimplemented error', () {
       // Arrange
       final ExtendsCameraPlatform cameraPlatform = ExtendsCameraPlatform();
 
@@ -263,9 +233,7 @@ void main() {
       );
     });
 
-    test(
-        'Default implementation of resumeVideoRecording() should throw unimplemented error',
-        () {
+    test('Default implementation of resumeVideoRecording() should throw unimplemented error', () {
       // Arrange
       final ExtendsCameraPlatform cameraPlatform = ExtendsCameraPlatform();
 
@@ -276,9 +244,7 @@ void main() {
       );
     });
 
-    test(
-        'Default implementation of setFlashMode() should throw unimplemented error',
-        () {
+    test('Default implementation of setFlashMode() should throw unimplemented error', () {
       // Arrange
       final ExtendsCameraPlatform cameraPlatform = ExtendsCameraPlatform();
 
@@ -289,9 +255,7 @@ void main() {
       );
     });
 
-    test(
-        'Default implementation of setExposureMode() should throw unimplemented error',
-        () {
+    test('Default implementation of setExposureMode() should throw unimplemented error', () {
       // Arrange
       final ExtendsCameraPlatform cameraPlatform = ExtendsCameraPlatform();
 
@@ -302,9 +266,7 @@ void main() {
       );
     });
 
-    test(
-        'Default implementation of setExposurePoint() should throw unimplemented error',
-        () {
+    test('Default implementation of setExposurePoint() should throw unimplemented error', () {
       // Arrange
       final ExtendsCameraPlatform cameraPlatform = ExtendsCameraPlatform();
 
@@ -315,9 +277,7 @@ void main() {
       );
     });
 
-    test(
-        'Default implementation of getMinExposureOffset() should throw unimplemented error',
-        () {
+    test('Default implementation of getMinExposureOffset() should throw unimplemented error', () {
       // Arrange
       final ExtendsCameraPlatform cameraPlatform = ExtendsCameraPlatform();
 
@@ -328,9 +288,7 @@ void main() {
       );
     });
 
-    test(
-        'Default implementation of getMaxExposureOffset() should throw unimplemented error',
-        () {
+    test('Default implementation of getMaxExposureOffset() should throw unimplemented error', () {
       // Arrange
       final ExtendsCameraPlatform cameraPlatform = ExtendsCameraPlatform();
 
@@ -341,9 +299,7 @@ void main() {
       );
     });
 
-    test(
-        'Default implementation of getExposureOffsetStepSize() should throw unimplemented error',
-        () {
+    test('Default implementation of getExposureOffsetStepSize() should throw unimplemented error', () {
       // Arrange
       final ExtendsCameraPlatform cameraPlatform = ExtendsCameraPlatform();
 
@@ -354,9 +310,7 @@ void main() {
       );
     });
 
-    test(
-        'Default implementation of setExposureOffset() should throw unimplemented error',
-        () {
+    test('Default implementation of setExposureOffset() should throw unimplemented error', () {
       // Arrange
       final ExtendsCameraPlatform cameraPlatform = ExtendsCameraPlatform();
 
@@ -367,9 +321,7 @@ void main() {
       );
     });
 
-    test(
-        'Default implementation of setFocusMode() should throw unimplemented error',
-        () {
+    test('Default implementation of setFocusMode() should throw unimplemented error', () {
       // Arrange
       final ExtendsCameraPlatform cameraPlatform = ExtendsCameraPlatform();
 
@@ -380,9 +332,7 @@ void main() {
       );
     });
 
-    test(
-        'Default implementation of setFocusPoint() should throw unimplemented error',
-        () {
+    test('Default implementation of setFocusPoint() should throw unimplemented error', () {
       // Arrange
       final ExtendsCameraPlatform cameraPlatform = ExtendsCameraPlatform();
 
@@ -393,9 +343,7 @@ void main() {
       );
     });
 
-    test(
-        'Default implementation of startVideoRecording() should throw unimplemented error',
-        () {
+    test('Default implementation of startVideoRecording() should throw unimplemented error', () {
       // Arrange
       final ExtendsCameraPlatform cameraPlatform = ExtendsCameraPlatform();
 
@@ -406,9 +354,7 @@ void main() {
       );
     });
 
-    test(
-        'Default implementation of stopVideoRecording() should throw unimplemented error',
-        () {
+    test('Default implementation of stopVideoRecording() should throw unimplemented error', () {
       // Arrange
       final ExtendsCameraPlatform cameraPlatform = ExtendsCameraPlatform();
 
@@ -419,9 +365,7 @@ void main() {
       );
     });
 
-    test(
-        'Default implementation of takePicture() should throw unimplemented error',
-        () {
+    test('Default implementation of takePicture() should throw unimplemented error', () {
       // Arrange
       final ExtendsCameraPlatform cameraPlatform = ExtendsCameraPlatform();
 
@@ -432,9 +376,7 @@ void main() {
       );
     });
 
-    test(
-        'Default implementation of getMaxZoomLevel() should throw unimplemented error',
-        () {
+    test('Default implementation of getMaxZoomLevel() should throw unimplemented error', () {
       // Arrange
       final ExtendsCameraPlatform cameraPlatform = ExtendsCameraPlatform();
 
@@ -445,9 +387,7 @@ void main() {
       );
     });
 
-    test(
-        'Default implementation of getMinZoomLevel() should throw unimplemented error',
-        () {
+    test('Default implementation of getMinZoomLevel() should throw unimplemented error', () {
       // Arrange
       final ExtendsCameraPlatform cameraPlatform = ExtendsCameraPlatform();
 
@@ -458,9 +398,7 @@ void main() {
       );
     });
 
-    test(
-        'Default implementation of setZoomLevel() should throw unimplemented error',
-        () {
+    test('Default implementation of setZoomLevel() should throw unimplemented error', () {
       // Arrange
       final ExtendsCameraPlatform cameraPlatform = ExtendsCameraPlatform();
 
@@ -471,9 +409,7 @@ void main() {
       );
     });
 
-    test(
-        'Default implementation of pausePreview() should throw unimplemented error',
-        () {
+    test('Default implementation of pausePreview() should throw unimplemented error', () {
       // Arrange
       final ExtendsCameraPlatform cameraPlatform = ExtendsCameraPlatform();
 
@@ -484,9 +420,7 @@ void main() {
       );
     });
 
-    test(
-        'Default implementation of resumePreview() should throw unimplemented error',
-        () {
+    test('Default implementation of resumePreview() should throw unimplemented error', () {
       // Arrange
       final ExtendsCameraPlatform cameraPlatform = ExtendsCameraPlatform();
 
@@ -500,10 +434,7 @@ void main() {
 
   group('exports', () {
     test('CameraDescription is exported', () {
-      const CameraDescription(
-          name: 'abc-123',
-          sensorOrientation: 1,
-          lensDirection: CameraLensDirection.external);
+      const CameraDescription(name: 'abc-123', sensorOrientation: 1, lensDirection: CameraLensDirection.external);
     });
 
     test('CameraException is exported', () {
@@ -562,9 +493,7 @@ class OverriddenCameraPlatform extends CameraPlatform {
   ) _onCreateCameraCalled;
 
   @override
-  Future<int> createCamera(
-      CameraDescription cameraDescription, ResolutionPreset? resolutionPreset,
-      {bool enableAudio = false}) {
+  Future<int> createCamera(CameraDescription cameraDescription, ResolutionPreset? resolutionPreset, {bool enableAudio = false}) {
     _onCreateCameraCalled(cameraDescription, resolutionPreset, enableAudio);
     return Future<int>.value(0);
   }

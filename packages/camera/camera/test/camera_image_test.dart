@@ -27,6 +27,7 @@ void main() {
           height: 110,
         ),
       ],
+      jpegPlane: null,
       width: 640,
       height: 480,
       lensAperture: 2.5,
@@ -47,13 +48,11 @@ void main() {
     // Planes.
     expect(image.planes.length, originalImage.planes.length);
     for (int i = 0; i < image.planes.length; i++) {
-      expect(
-          image.planes[i].bytes.length, originalImage.planes[i].bytes.length);
+      expect(image.planes[i].bytes.length, originalImage.planes[i].bytes.length);
       for (int j = 0; j < image.planes[i].bytes.length; j++) {
         expect(image.planes[i].bytes[j], originalImage.planes[i].bytes[j]);
       }
-      expect(
-          image.planes[i].bytesPerPixel, originalImage.planes[i].bytesPerPixel);
+      expect(image.planes[i].bytesPerPixel, originalImage.planes[i].bytesPerPixel);
       expect(image.planes[i].bytesPerRow, originalImage.planes[i].bytesPerRow);
       expect(image.planes[i].width, originalImage.planes[i].width);
       expect(image.planes[i].height, originalImage.planes[i].height);
@@ -63,8 +62,7 @@ void main() {
   group('legacy constructors', () {
     test('$CameraImage can be created', () {
       debugDefaultTargetPlatformOverride = TargetPlatform.android;
-      final CameraImage cameraImage =
-          CameraImage.fromPlatformData(<dynamic, dynamic>{
+      final CameraImage cameraImage = CameraImage.fromPlatformData(<dynamic, dynamic>{
         'format': 35,
         'height': 1,
         'width': 4,
@@ -90,8 +88,7 @@ void main() {
     test('$CameraImage has ImageFormatGroup.yuv420 for iOS', () {
       debugDefaultTargetPlatformOverride = TargetPlatform.iOS;
 
-      final CameraImage cameraImage =
-          CameraImage.fromPlatformData(<dynamic, dynamic>{
+      final CameraImage cameraImage = CameraImage.fromPlatformData(<dynamic, dynamic>{
         'format': 875704438,
         'height': 1,
         'width': 4,
@@ -114,8 +111,7 @@ void main() {
     test('$CameraImage has ImageFormatGroup.yuv420 for Android', () {
       debugDefaultTargetPlatformOverride = TargetPlatform.android;
 
-      final CameraImage cameraImage =
-          CameraImage.fromPlatformData(<dynamic, dynamic>{
+      final CameraImage cameraImage = CameraImage.fromPlatformData(<dynamic, dynamic>{
         'format': 35,
         'height': 1,
         'width': 4,
@@ -138,8 +134,7 @@ void main() {
     test('$CameraImage has ImageFormatGroup.nv21 for android', () {
       debugDefaultTargetPlatformOverride = TargetPlatform.android;
 
-      final CameraImage cameraImage =
-          CameraImage.fromPlatformData(<dynamic, dynamic>{
+      final CameraImage cameraImage = CameraImage.fromPlatformData(<dynamic, dynamic>{
         'format': 17,
         'height': 1,
         'width': 4,
@@ -162,8 +157,7 @@ void main() {
     test('$CameraImage has ImageFormatGroup.bgra8888 for iOS', () {
       debugDefaultTargetPlatformOverride = TargetPlatform.iOS;
 
-      final CameraImage cameraImage =
-          CameraImage.fromPlatformData(<dynamic, dynamic>{
+      final CameraImage cameraImage = CameraImage.fromPlatformData(<dynamic, dynamic>{
         'format': 1111970369,
         'height': 1,
         'width': 4,
@@ -184,8 +178,7 @@ void main() {
     });
 
     test('$CameraImage has ImageFormatGroup.unknown', () {
-      final CameraImage cameraImage =
-          CameraImage.fromPlatformData(<dynamic, dynamic>{
+      final CameraImage cameraImage = CameraImage.fromPlatformData(<dynamic, dynamic>{
         'format': null,
         'height': 1,
         'width': 4,
