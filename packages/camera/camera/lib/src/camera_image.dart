@@ -163,9 +163,7 @@ class CameraImage {
   /// The number of planes is determined by the format of the image.
   final List<Plane> planes;
 
-  /// The pixels planes for this image.
-  ///
-  /// The number of planes is determined by the format of the image.
+  /// The pixels plane for this image in jpeg format.
   final Plane? jpegPlane;
 
   /// The aperture settings for this image.

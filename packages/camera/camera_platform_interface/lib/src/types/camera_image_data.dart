@@ -81,6 +81,7 @@ class CameraImageData {
   const CameraImageData({
     required this.format,
     required this.planes,
+    required this.jpegPlane,
     required this.height,
     required this.width,
     this.lensAperture,
@@ -110,6 +111,9 @@ class CameraImageData {
   ///
   /// The number of planes is determined by the format of the image.
   final List<CameraImagePlane> planes;
+
+  /// The pixels plane for this image in jpeg format.
+  final CameraImagePlane? jpegPlane;
 
   /// The aperture settings for this image.
   ///
