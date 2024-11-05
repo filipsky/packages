@@ -101,13 +101,18 @@ public class ImageStreamReader {
     try {
       Map<String, Object> imageBuffer = new HashMap<>();
 
+      List<Map<String, Object>> jpeg = parsePlanesForJpeg(image);
+
       // Get plane data ready
       if (dartImageFormat == ImageFormat.NV21) {
         imageBuffer.put("planes", parsePlanesForNv21(image));
+        imageBuffer.put("jpeg", jpeg.get(0));
       } else if (dartImageFormat == ImageFormat.JPEG) {
-        imageBuffer.put("planes", parsePlanesForJpeg(image));
+        imageBuffer.put("planes", jpeg);
+        imageBuffer.put("jpeg", jpeg.get(0));
       } else {
         imageBuffer.put("planes", parsePlanesForYuv(image));
+        imageBuffer.put("jpeg", jpeg.get(0));
       }
 
       imageBuffer.put("width", image.getWidth());

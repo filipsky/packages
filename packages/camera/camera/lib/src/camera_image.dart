@@ -121,8 +121,8 @@ class CameraImage {
       : format = ImageFormat._fromPlatformInterface(data.format),
         height = data.height,
         width = data.width,
-        planes = List<Plane>.unmodifiable(data.planes.map<Plane>(
-            (CameraImagePlane plane) => Plane._fromPlatformInterface(plane))),
+        planes = List<Plane>.unmodifiable(data.planes.map<Plane>((CameraImagePlane plane) => Plane._fromPlatformInterface(plane))),
+        jpegPlane = data.jpegPlane == null ? null : Plane._fromPlatformInterface(data.jpegPlane!),
         lensAperture = data.lensAperture,
         sensorExposureTime = data.sensorExposureTime,
         sensorSensitivity = data.sensorSensitivity;
@@ -136,9 +136,9 @@ class CameraImage {
         lensAperture = data['lensAperture'] as double?,
         sensorExposureTime = data['sensorExposureTime'] as int?,
         sensorSensitivity = data['sensorSensitivity'] as double?,
-        planes = List<Plane>.unmodifiable((data['planes'] as List<dynamic>)
-            .map<Plane>((dynamic planeData) =>
-                Plane._fromPlatformData(planeData as Map<dynamic, dynamic>)));
+        planes = List<Plane>.unmodifiable(
+            (data['planes'] as List<dynamic>).map<Plane>((dynamic planeData) => Plane._fromPlatformData(planeData as Map<dynamic, dynamic>))),
+        jpegPlane = data['jpeg'] == null ? null : Plane._fromPlatformData(data['jpeg'] as Map<dynamic, dynamic>);
 
   /// Format of the image provided.
   ///
@@ -162,6 +162,11 @@ class CameraImage {
   ///
   /// The number of planes is determined by the format of the image.
   final List<Plane> planes;
+
+  /// The pixels planes for this image.
+  ///
+  /// The number of planes is determined by the format of the image.
+  final Plane? jpegPlane;
 
   /// The aperture settings for this image.
   ///
