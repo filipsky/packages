@@ -23,7 +23,7 @@ dependencies:
   camera_platform_interface: 
     git:
       url: https://github.com/filipsky/packages
-      ref: git_build
+      ref: upgradePackages
       path: packages/camera/camera_platform_interface
   flutter:
     sdk: flutter
