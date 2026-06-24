@@ -28,22 +28,22 @@ dependencies:
   camera_android: 
     git:
       url: https://github.com/filipsky/packages
-      ref: git_build
+      ref: upgradePackages
       path: packages/camera/camera_android
 #  camera_avfoundation: 
 #    git:
 #      url: https://github.com/filipsky/packages
-#      ref: git_build
+#      ref: upgradePackages
 #      path: packages/camera/camera_avfoundation
   camera_platform_interface: 
     git:
       url: https://github.com/filipsky/packages
-      ref: git_build
+      ref: upgradePackages
       path: packages/camera/camera_platform_interface
   camera_web: 
     git:
       url: https://github.com/filipsky/packages
-      ref: git_build
+      ref: upgradePackages
       path: packages/camera/camera_web
   flutter:
     sdk: flutter
